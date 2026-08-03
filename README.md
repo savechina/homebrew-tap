@@ -4,10 +4,18 @@ Homebrew tap for [zenspace](https://github.com/savechina/zenspace) CLI.
 
 ## Installation
 
+
 ```bash
-brew tap savechina/tap
+brew tap savechina/homebrew-tap
 brew install zenspace
 ```
+
+OR
+
+```bash
+brew install savechina/tap/zenspace
+```
+
 
 ## About
 
