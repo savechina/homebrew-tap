@@ -1,35 +1,35 @@
 class Zenspace < Formula
   desc "Zenspace AI Agents productivity suite，个人生产力套件"
   homepage "https://github.com/savechina/zenspace"
-  version "0.0.4"
+  version "0.0.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.4/zen-aarch64-apple-darwin.tar.xz"
-      sha256 "9f7b8493282e326075a7df53232abe3cb5ea9058b0797fa593ca8aca6363a48d"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-aarch64-apple-darwin.tar.xz"
+      sha256 "af1f51d0bdf85468f44b7c3b4a150a03153342a016a6477ff7dbcc4a866d680e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.4/zen-x86_64-apple-darwin.tar.xz"
-      sha256 "c828833ec55b967f42d6931325cfa9f1fad804fdfbdd81120a1ee61ac634034d"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-x86_64-apple-darwin.tar.xz"
+      sha256 "7c98345ec6e82cc153c02eb23014a1e812502e63964469983525c15838743d6e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.4/zen-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "87d9067901dc55110d47e4457e82e952924220c5cb3b3f95245a2d8bf1c4e085"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "97a44b21264e029183f3c63830982c2d332c13cdabee6d40fae0047ea9d4a607"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.4/zen-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "679a1e1fd4f3632304b54835517f7784a1f7ea79f4b3e34a9a07b5a4e63c63af"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "879321f45ed8afdac29d6c7776b1ca4fd3f74e7da61c795d08463da1c7a716aa"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,18 +47,10 @@ class Zenspace < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "zen"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "zen"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "zen"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "zen"
-    end
+    bin.install "zen" if OS.mac? && Hardware::CPU.arm?
+    bin.install "zen" if OS.mac? && Hardware::CPU.intel?
+    bin.install "zen" if OS.linux? && Hardware::CPU.arm?
+    bin.install "zen" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
