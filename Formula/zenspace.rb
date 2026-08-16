@@ -1,25 +1,25 @@
 class Zenspace < Formula
   desc "Zenspace AI Agents productivity suite，个人生产力套件"
   homepage "https://github.com/savechina/zenspace"
-  version "0.0.5"
+  version "0.0.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-aarch64-apple-darwin.tar.xz"
-      sha256 "af1f51d0bdf85468f44b7c3b4a150a03153342a016a6477ff7dbcc4a866d680e"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-aarch64-apple-darwin.tar.xz"
+      sha256 "12273aaef49ee76c00bb1201fa00d84a9bfe7e839a197509032a49b99d09ae5f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-x86_64-apple-darwin.tar.xz"
-      sha256 "7c98345ec6e82cc153c02eb23014a1e812502e63964469983525c15838743d6e"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-x86_64-apple-darwin.tar.xz"
+      sha256 "b0a9bd6f1653b90a958e41d34a1973cc039a87ab7b07acf32054251666a04cdb"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "97a44b21264e029183f3c63830982c2d332c13cdabee6d40fae0047ea9d4a607"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "dfdeb1f04e38ba322a8f7e9e33f54a1d5d82518d4059d3f3513ae1c8720effa0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.5/zen-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "879321f45ed8afdac29d6c7776b1ca4fd3f74e7da61c795d08463da1c7a716aa"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "778ea8a0b48a31781c016931b38990c746eb032311a9354a28ee16e97ce8be62"
     end
   end
   license "MIT"
@@ -47,10 +47,18 @@ class Zenspace < Formula
   end
 
   def install
-    bin.install "zen" if OS.mac? && Hardware::CPU.arm?
-    bin.install "zen" if OS.mac? && Hardware::CPU.intel?
-    bin.install "zen" if OS.linux? && Hardware::CPU.arm?
-    bin.install "zen" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "zen"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "zen"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "zen"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "zen"
+    end
 
     install_binary_aliases!
 
