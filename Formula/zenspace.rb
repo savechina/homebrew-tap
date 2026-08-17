@@ -1,25 +1,25 @@
 class Zenspace < Formula
   desc "Zenspace AI Agents productivity suite，个人生产力套件"
   homepage "https://github.com/savechina/zenspace"
-  version "0.0.6"
+  version "0.0.7"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-aarch64-apple-darwin.tar.xz"
-      sha256 "12273aaef49ee76c00bb1201fa00d84a9bfe7e839a197509032a49b99d09ae5f"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.7/zen-aarch64-apple-darwin.tar.xz"
+      sha256 "c91f12b572f4ecc711ea916ea03936a1291ab5d46c49688fef73cbefc9329100"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-x86_64-apple-darwin.tar.xz"
-      sha256 "b0a9bd6f1653b90a958e41d34a1973cc039a87ab7b07acf32054251666a04cdb"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.7/zen-x86_64-apple-darwin.tar.xz"
+      sha256 "10bf265c01029bd1a4c516fcfaab82feae56adf7cacd5bda3d3eda9b6a96dae4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "dfdeb1f04e38ba322a8f7e9e33f54a1d5d82518d4059d3f3513ae1c8720effa0"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.7/zen-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "251c557347bff0f3731305fa9ec80b2a3bfdcdb666aa512bfc589cb7234c15d7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/savechina/zenspace/releases/download/v0.0.6/zen-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "778ea8a0b48a31781c016931b38990c746eb032311a9354a28ee16e97ce8be62"
+      url "https://github.com/savechina/zenspace/releases/download/v0.0.7/zen-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "16feff89b4ed05a982d9b300b2d6e49147c1b9cc67c2507491fe9d7a45aa2a8e"
     end
   end
   license "MIT"
